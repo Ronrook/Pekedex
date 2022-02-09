@@ -26,7 +26,7 @@ function getDataById (id) {
         .then(response => response.json())
         .then(data => {
             setCardPokemon (data)
-            console.log(data)
+            // console.log(data)
     })
     
   
@@ -34,7 +34,10 @@ function getDataById (id) {
 // getDataById (1)
 
 function setCardPokemon (data) {
-
+    let claves = Object.values(data);
+    console.log('imprimiendo claves')
+    console.log(claves)
+    console.log('//////////////')
     type = data.types[0].type.name
 
     let color;
@@ -58,16 +61,16 @@ function setCardPokemon (data) {
   </div> <br>`
 }
 
+// console.log(data.length)
 for (let i = 0; i <= 20; i++) {
     getDataById (i)
-    console.log('impresion div')
-    console.log(i)
-}
-
-let selectPokemon = document.getElementById('selectPokemon')
-
-for (let j = 0; j <= 10; j++) {
-
-    selectPokemon.innerHTML += `<option value="${data.id}">${data.name}</option>`
     
 }
+
+// let selectPokemon = document.getElementById('selectPokemon')
+
+// for (let j = 0; j <= 10; j++) {
+
+//     selectPokemon.innerHTML += `<option value="${data.id}">${data.name}</option>`
+    
+// }
